@@ -1,0 +1,120 @@
+<div class="container u-space-3">
+    <div class="w-md-80 w-lg-50 text-center mx-auto mb-9">
+        <span class="u-label u-label--sm u-label--success mb-2">Potrzebujesz dodatkowych informacji?</span>
+        <h2 class="text-primary font-weight-normal">Skontaktuj się <span class="font-weight-bold">z nami</span></h2>
+        <p>Odpowiemy na wszystkie Twoje pytania</p>
+    </div>
+
+    <div class="w-lg-80 mx-auto">
+        <form class="js-validate" action="kontakt" method="post">
+            <div class="row">
+                <div class="col-sm-6 mb-6">
+                    <div class="js-form-message">
+                        <label class="h6 small d-block text-uppercase">
+                            Imię
+                            <span class="text-danger">*</span>
+                        </label>
+
+                        <div class="js-focus-state input-group u-form">
+                            <input class="form-control u-form__input" type="text" name="name" required
+                                   placeholder="Paweł"
+                                   aria-label="Paweł"
+                                   data-msg="Podaj swoje imię"
+                                   data-error-class="u-has-error"
+                                   data-success-class="u-has-success">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 mb-6">
+                    <div class="js-form-message">
+                        <label class="h6 small d-block text-uppercase">
+                            Adres e-mail
+                            <span class="text-danger">*</span>
+                        </label>
+
+                        <div class="js-focus-state input-group u-form">
+                            <input class="form-control u-form__input" type="email" name="email" required
+                                   placeholder="patryk.szczepanski@gmail.com"
+                                   aria-label="patryk.szczepanski@gmail.com"
+                                   data-msg="Podaj poprawny adres e-mail"
+                                   data-error-class="u-has-error"
+                                   data-success-class="u-has-success">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class="col-sm-6 mb-6">
+                    <div class="js-form-message">
+                        <label class="h6 small d-block text-uppercase">
+                            Temat
+                            <span class="text-danger">*</span>
+                        </label>
+
+                        <div class="js-focus-state input-group u-form">
+                            <input class="form-control u-form__input" type="text" name="subject" required
+                                   placeholder="Dodatkowy bagaż"
+                                   aria-label="Dodatkowy bagaż"
+                                   data-msg="Podaj temat"
+                                   data-error-class="u-has-error"
+                                   data-success-class="u-has-success">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 mb-6">
+                    <div class="js-form-message">
+                        <label class="h6 small d-block text-uppercase">
+                            Numer telefonu
+                            <span class="text-danger">*</span>
+                        </label>
+
+                        <div class="js-focus-state input-group u-form">
+                            <input class="form-control u-form__input" type="number" name="phone" required
+                                   placeholder="+48 791 773 016"
+                                   aria-label="+48 791 773 016"
+                                   data-msg="Podaj swój numer telefonu"
+                                   data-error-class="u-has-error"
+                                   data-success-class="u-has-success">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="js-form-message mb-9">
+                <label class="h6 small d-block text-uppercase">
+                    Jak możemy Ci pomóc?
+                    <span class="text-danger">*</span>
+                </label>
+
+                <div class="js-focus-state input-group u-form">
+              <textarea class="form-control u-form__input" rows="4" name="text" required
+                        placeholder="Cześć, potrzebuję informacji ..."
+                        aria-label="Cześć, potrzebuję informacji ..."
+                        data-msg="Podaj treść swojego pytania"
+                        data-error-class="u-has-error"
+                        data-success-class="u-has-success"></textarea>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Wyślij</button>
+                <p class="small">Skontaktujemy się z Tobą najszybciej jak możemy.</p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="bg-primary text-white text-center">
+    <div class="container u-space-1">
+        <span class="h6 d-block d-lg-inline-block font-weight-light mb-lg-0">
+          Preferujesz kontakt telefoniczny <span class="font-weight-bold">zadzwoń do nas</span>
+        </span>
+        <a class="btn btn-sm u-btn-white transition-3d-hover font-weight-normal ml-2" href="tel:+48500324406"><img src="assets/flags/polska.jpg" width="20px"> +48 500 324 406</a>
+        <a class="btn btn-sm u-btn-white transition-3d-hover font-weight-normal ml-2" href="tel:+32488277778"> <img src="assets/flags/belgia.png" width="20px"> +32 488 277 778</a>
+    </div>
+</div>
+<!-- End CTA Section -->

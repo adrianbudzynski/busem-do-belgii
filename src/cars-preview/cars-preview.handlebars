@@ -1,0 +1,69 @@
+<div class="container u-cubeportfolio u-space-3-top u-space-2-bottom">
+
+    <div class="w-md-80 w-lg-50 text-center mx-auto mb-9">
+        <span class="u-label u-label--sm u-label--success mb-2">Czym jeździmy</span>
+        <h2 class="text-primary">Poznaj <span class="font-weight-bold">naszą flotę</span></h2>
+        <p>Wygodne i komfortowe fotele, dużo miejsca na nogi, pojemny bagażnik.</p>
+    </div>
+
+    <div class="container u-space-2-top u-space-3-bottom u-cubeportfolio">
+        <!-- Filter -->
+        <ul id="cubeFilter" class="list-inline cbp-l-filters-alignRight d-flex">
+            <li class="list-inline-item cbp-filter-item cbp-filter-item-active u-cubeportfolio__item mr-auto" data-filter="*">Wszystkie</li>
+            {{#each filter}}
+                <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".{{code}}">{{name}}</li>
+            {{/each}}
+        </ul>
+        <!-- End Filter -->
+
+        <!-- Content -->
+        <div class="cbp mb-7"
+             data-controls="#cubeFilter"
+             data-animation="quicksand"
+             data-x-gap="16"
+             data-y-gap="16"
+             data-load-more-selector="#cubeLoadMore"
+             data-load-more-action="auto"
+             data-load-items-amount="2"
+             data-media-queries='[
+              {"width": 1500, "cols": 4},
+              {"width": 1100, "cols": 4},
+              {"width": 800, "cols": 3},
+              {"width": 480, "cols": 2},
+              {"width": 300, "cols": 1}
+            ]'>
+
+            {{#each gallery}}
+                <div class="cbp-item rounded {{filters}}">
+                    <div class="cbp-caption">
+                        <a class="cbp-lightbox u-media-viewer" href="../../assets/photos/{{url}}" data-title="{{description}}">
+                            <img src="../../assets/photos/{{url}}" alt="{{description}}">
+                            <span class="u-media-viewer__container">
+                                <span class="u-media-viewer__icon">
+                                  <span class="fa fa-plus u-media-viewer__icon-inner"></span>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            {{/each}}
+
+        </div>
+    </div>
+
+</div>
+
+{{#section 'styles'}}
+    <link rel="stylesheet" href="assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
+{{/section}}
+
+
+
+{{#section 'scripts'}}
+    <script src="assets/vendor/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+    <script src="assets/js/components/hs.cubeportfolio.js"></script>
+
+    <script>
+        $.HSCore.components.HSCubeportfolio.init('.cbp');
+    </script>
+{{/section}}

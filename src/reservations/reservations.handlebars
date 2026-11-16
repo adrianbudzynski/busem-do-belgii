@@ -1,0 +1,313 @@
+<div class="container u-space-3">
+    <div class="mb-9">
+        <h1 class="h2 font-weight-normal">Rezerwacja online</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="js-validate" method="post" action="rezerwacja">
+                <div class="mb-4">
+                    <h2 class="h5">Formularz</h2>
+                </div>
+
+                <div class="row mb-9">
+                    <div class="col-md-6">
+                        <div class="js-form-message mb-6">
+                            <label class="h6 small d-block text-uppercase">
+                                Imię
+                                <span class="text-danger">*</span>
+                            </label>
+
+                            <div class="js-focus-state input-group u-form">
+                                <input class="form-control u-form__input" type="text" name="name" required
+                                       placeholder="Paweł"
+                                       aria-label="Paweł"
+                                       data-msg="Podaj swoje imię"
+                                       data-error-class="u-has-error"
+                                       data-success-class="u-has-success">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="js-form-message mb-6">
+                            <label class="h6 small d-block text-uppercase">
+                                Nazwisko
+                                <span class="text-danger">*</span>
+                            </label>
+
+                            <div class="js-focus-state input-group u-form">
+                                <input class="form-control u-form__input" type="text" name="surname" required
+                                       placeholder="Szczepański"
+                                       aria-label="Szczepański"
+                                       data-msg="Podaj swoje nazwisko"
+                                       data-error-class="u-has-error"
+                                       data-success-class="u-has-success">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-100"></div>
+
+                    <div class="col-md-6">
+                        <div class="js-form-message mb-6">
+                            <label class="h6 small d-block text-uppercase">
+                                Adres email
+                                <span class="text-danger">*</span>
+                            </label>
+
+                            <div class="js-focus-state input-group u-form">
+                                <input class="form-control u-form__input" type="email" required name="email"
+                                       placeholder="pawel.szczepanski@gmail.com"
+                                       aria-label="pawel.szczepanski@gmail.com"
+                                       data-msg="Podaj swój adres email"
+                                       data-error-class="u-has-error"
+                                       data-success-class="u-has-success">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="js-form-message mb-6">
+                            <label class="h6 small d-block text-uppercase">
+                                Numer telefonu
+                            </label>
+
+                            <div class="js-focus-state input-group u-form">
+                                <input class="form-control u-form__input" type="text" name="phone"
+                                       placeholder="+48 791 773 016"
+                                       aria-label="+48 791 773 016"
+                                       data-msg="Please enter your last name."
+                                       data-error-class="u-has-error"
+                                       data-success-class="u-has-success">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-100"></div>
+
+                    <div class="col-sm-12">
+
+                        <div class="row">
+
+                            <div class="col-sm-12 col-md-6">
+                                <div class="mb-4">
+                                    <h2 class="h5">Adres wyjazdu</h2>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-sm-12">
+                                        <div class="js-form-message mb-6">
+                                            <label class="h6 small d-block text-uppercase">
+                                                Adres
+                                                <span class="text-danger">*</span>
+                                            </label>
+
+                                            <div class="js-focus-state input-group u-form">
+                                                <input class="form-control u-form__input" type="text" required
+                                                       name="fromAddress"
+                                                       placeholder="Armii Krajowej 32/12"
+                                                       aria-label="Armii Krajowej 32/12"
+                                                       data-msg="Podaj poprawny adres"
+                                                       data-error-class="u-has-error"
+                                                       data-success-class="u-has-success">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="js-form-message mb-6">
+                                            <label class="h6 small d-block text-uppercase">
+                                                Miasto
+                                                <span class="text-danger">*</span>
+                                            </label>
+
+                                            <div class="js-focus-state input-group u-form">
+                                                <input class="form-control u-form__input" type="text" required
+                                                       name="fromCity"
+                                                       placeholder="Lublin"
+                                                       aria-label="Lublin"
+                                                       data-msg="Podaj poprawne miasto"
+                                                       data-error-class="u-has-error"
+                                                       data-success-class="u-has-success">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="w-100"></div>
+
+                                    <div class="col-md-6">
+                                        <div class="mb-6">
+                                            <label class="h6 small d-block text-uppercase">
+                                                Kraj
+                                                <span class="text-danger">*</span>
+                                            </label>
+
+                                            <select class="custom-select" name="fromCountry">
+                                                <option selected>Wybierz kraj</option>
+                                                <option value="POLSKA">Polska</option>
+                                                <option value="BELGIA">Belgia</option>
+                                                <option value="HOLANDIA">Holandia</option>
+                                                <option value="NIEMCY">Niemcy</option>
+                                            </select>
+                                        </div>
+                                        <!-- End Input -->
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="js-form-message mb-6">
+                                            <label class="h6 small d-block text-uppercase">
+                                                Kod pocztowy
+                                                <span class="text-danger">*</span>
+                                            </label>
+
+                                            <div class="js-focus-state input-group u-form">
+                                                <input class="form-control u-form__input" type="text" required
+                                                       name="fromZipCode"
+                                                       placeholder="21-100"
+                                                       aria-label="21-100"
+                                                       data-msg="Podaj kod pocztowy"
+                                                       data-error-class="u-has-error"
+                                                       data-success-class="u-has-success">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-12 col-md-6">
+                                <div class="mb-4">
+                                    <h2 class="h5">Adres docelowy</h2>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-sm-12">
+                                        <div class="js-form-message mb-6">
+                                            <label class="h6 small d-block text-uppercase">
+                                                Adres
+                                                <span class="text-danger">*</span>
+                                            </label>
+
+                                            <div class="js-focus-state input-group u-form">
+                                                <input class="form-control u-form__input" type="text" required
+                                                       name="toAddress"
+                                                       placeholder="Armii Krajowej 32/12"
+                                                       aria-label="Armii Krajowej 32/12"
+                                                       data-msg="Podaj poprawny adres"
+                                                       data-error-class="u-has-error"
+                                                       data-success-class="u-has-success">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="js-form-message mb-6">
+                                            <label class="h6 small d-block text-uppercase">
+                                                Miasto
+                                                <span class="text-danger">*</span>
+                                            </label>
+
+                                            <div class="js-focus-state input-group u-form">
+                                                <input class="form-control u-form__input" type="text" required
+                                                       name="toCity"
+                                                       placeholder="Lublin"
+                                                       aria-label="Lublin"
+                                                       data-msg="Podaj poprawne miasto"
+                                                       data-error-class="u-has-error"
+                                                       data-success-class="u-has-success">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="w-100"></div>
+
+                                    <div class="col-md-6">
+                                        <div class="mb-6">
+                                            <label class="h6 small d-block text-uppercase">
+                                                Kraj
+                                                <span class="text-danger">*</span>
+                                            </label>
+
+                                            <select class="custom-select" name="toCountry">
+                                                <option selected>Wybierz kraj</option>
+                                                <option value="POLSKA">Polska</option>
+                                                <option value="BELGIA">Belgia</option>
+                                                <option value="HOLANDIA">Holandia</option>
+                                                <option value="NIEMCY">Niemcy</option>
+                                            </select>
+                                        </div>
+                                        <!-- End Input -->
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="js-form-message mb-6">
+                                            <label class="h6 small d-block text-uppercase">
+                                                Kod pocztowy
+                                                <span class="text-danger">*</span>
+                                            </label>
+
+                                            <div class="js-focus-state input-group u-form">
+                                                <input class="form-control u-form__input" type="text" required
+                                                       name="toZipCode"
+                                                       placeholder="21-100"
+                                                       aria-label="21-100"
+                                                       data-msg="Podaj kod pocztowy"
+                                                       data-error-class="u-has-error"
+                                                       data-success-class="u-has-success">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="mb-4">
+                            <h2 class="h5">Data wyjazdu</h2>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="js-form-message mb-6">
+                                    <label class="h6 small d-block text-uppercase">
+                                        Data wyjazdu
+                                        <span class="text-danger">*</span>
+                                    </label>
+
+                                    <div class="js-focus-state input-group u-form">
+                                        <input class="form-control u-form__input" type="date" required name="date"
+                                               placeholder="{{datetime}}"
+                                               aria-label="{{datetime}}"
+                                               data-msg="Podaj datę planowanego wyjazdu"
+                                               data-error-class="u-has-error"
+                                               data-success-class="u-has-success">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="submit" class="btn btn-primary u-btn-primary transition-3d-hover">Rezerwuj</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Checkout Section -->
+
+<hr class="my-0">

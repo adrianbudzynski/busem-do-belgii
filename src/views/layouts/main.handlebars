@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{title}}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="content-language" content="pl">
+    <meta name="description" content="{{description}}">
+    <base href="/">
+
+    <link hreflang="pl" href="https://busemdobelgii.pl{{_locals.url}}" rel="alternate" />
+    <link rel="canonical" href="https://busemdobelgii.pl{{_locals.url}}" />
+
+    <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendor/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/vendor/animate.css/animate.min.css">
+    <link rel="stylesheet" href="assets/vendor/hs-megamenu/src/hs.megamenu.css">
+    <link rel="stylesheet" href="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="assets/vendor/fancybox/jquery.fancybox.css">
+    <link rel="stylesheet" href="assets/vendor/slick-carousel/slick/slick.css">
+
+    {{{_sections.styles}}}
+
+    <link rel="stylesheet" href="assets/css/front.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    {{>facebook}}
+
+</head>
+
+<body>
+
+<a id="skippy" class="sr-only sr-only-focusable u-skippy" href="#content">
+    <div class="container">
+        <span class="u-skiplink-text">Skip to main content</span>
+    </div>
+</a>
+
+{{>header}}
+
+<main id="content" role="main">
+    {{{body}}}
+</main>
+
+{{>footer}}
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/pl_PL/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-customerchat"
+     attribution=setup_tool
+     page_id="1556681444580719"
+     logged_in_greeting="Witaj. W czym Ci możemy pomóc?"
+     logged_out_greeting="Witaj. W czym Ci możemy pomóc?">
+</div>
+
+<script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+<script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+<script src="assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+<script src="assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="assets/vendor/fancybox/jquery.fancybox.min.js"></script>
+<script src="assets/vendor/typed.js/lib/typed.min.js"></script>
+<script src="assets/vendor/slick-carousel/slick/slick.js"></script>
+
+<script src="assets/js/hs.core.js"></script>
+<script src="assets/js/components/hs.header.js"></script>
+<script src="assets/js/components/hs.unfold.js"></script>
+<script src="assets/js/helpers/hs.focus-state.js"></script>
+<script src="assets/js/components/hs.malihu-scrollbar.js"></script>
+<script src="assets/js/components/hs.validation.js"></script>
+<script src="assets/js/components/hs.fancybox.js"></script> <!-- TODO: Move to gallery -->
+<script src="assets/js/components/hs.slick-carousel.js"></script> <!-- TODO: Is that neccessary -->
+<script src="assets/js/components/hs.show-animation.js"></script>
+<script src="assets/js/components/hs.go-to.js"></script>
+
+<script>
+    $(window).on('load', function () {
+        $('.js-mega-menu').HSMegaMenu({
+            event: 'hover',
+            pageContainer: $('.container'),
+            breakpoint: 767,
+            hideTimeOut: 0
+        });
+    });
+
+    $(document).on('ready', function () {
+        $.HSCore.components.HSHeader.init($('#header'));
+        $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+        $.HSCore.helpers.HSFocusState.init();
+        $.HSCore.components.HSValidation.init('.js-validate', {
+            rules: {
+                confirmPassword: {
+                    equalTo: '#password'
+                }
+            }
+        });
+        $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+        $.HSCore.components.HSFancyBox.init('.js-fancybox');
+        $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+        $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+</script>
+
+{{{_sections.scripts}}}
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-99249180-3', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter48654077 = new Ya.Metrika({
+                    id:48654077,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/48654077" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+</body>
+</html>
