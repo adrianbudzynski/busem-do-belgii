@@ -16,19 +16,13 @@ async function bootstrap() {
     // app.useGlobalFilters(new NotFoundExceptionFilter());
     // app.useGlobalFilters(new AnyExceptionFilter());
 
+    // Send subdomains of the site (e.g. www.) to the apex domain. Other hosts, such as a
+    // hosting platform's generated domain or localhost, are served as they are.
+    const CANONICAL_DOMAIN = 'busemdobelgii.pl';
     app.use('/*', (req, res, next) => {
-        if (req.headers && req.headers.host) {
-            const regexp = /(http:\/\/\.?|www\.?|[a-z0-9|-]+\.)+([a-z0-9|-]+\.[a-z]+|localhost)(:[0-9]{0,5})?/;
-            const parts = regexp.exec(req.headers.host);
-            if (parts && req.headers.host && req.headers.host.indexOf('dev.') === -1) {
-                let domain = '';
-                parts.forEach((hostPart, index) => {
-                    if (index > 1 && hostPart) domain += hostPart;
-                });
-                res.redirect(HttpStatus.MOVED_PERMANENTLY, 'https://' + domain + req.url);
-            } else {
-                next();
-            }
+        const host = (req.headers.host || '').split(':')[0].toLowerCase();
+        if (host.endsWith('.' + CANONICAL_DOMAIN) && host.indexOf('dev.') === -1) {
+            res.redirect(HttpStatus.MOVED_PERMANENTLY, 'https://' + CANONICAL_DOMAIN + req.originalUrl);
         } else {
             next();
         }
