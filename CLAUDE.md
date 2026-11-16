@@ -26,6 +26,23 @@ npm run test:e2e       # jest with test/jest-e2e.json
 
 `test/app.e2e-spec.ts` is the stale Nest starter test: it expects `GET /` to return `Hello World!`, but `/` now renders the home page, so the test fails.
 
+### Playwright smoke tests (`e2e/`)
+
+`e2e/` is a separate npm package on Node 22 (`e2e/.nvmrc`), kept apart because current Playwright needs Node 18 or newer and its types don't compile with TypeScript 2.9. It tests a running instance of the site at `BASE_URL`:
+
+```bash
+docker build -t site . && docker run -d -p 3000:3000 site   # or: npm run build && node dist/main.js (Node 16)
+cd e2e && npm ci && npx playwright install chromium
+BASE_URL=http://localhost:3000 npx playwright test
+npx playwright test -g "contact form"                      # single test
+```
+
+The tests must not submit the contact or reservation forms, because that sends a real email. When you add a page, add its route to the `pages` list in `e2e/tests/smoke.spec.ts`.
+
+### CI (`.github/workflows/ci.yml`)
+
+CI runs on pull requests and on pushes to `main`. `Build (Node 16)` runs `npm ci` and `npm run build`. `Playwright (dockerfile)` and `Playwright (railpack)` each build the deploy image, start it, and run the e2e suite against it. All three are required checks in the `main` ruleset, and changes to `main` must go through a pull request.
+
 ## Architecture
 
 - `src/main.ts` is the real entry point. It configures Express by hand on the Nest app: a 301 redirect from any `*.busemdobelgii.pl` subdomain to `https://busemdobelgii.pl` (skipped for hosts containing `dev.`; other hosts are served as they are), `res.locals.url` (used for the canonical/hreflang links in the layout), express-handlebars with `handlebars-helpers` plus `express-handlebars-sections`, body-parser, compression, and static serving of `public/` with a 30-day maxAge. `main.hmr.ts` and `webpack.config.js` are an unused HMR leftover from the starter that skips all of this setup.
