@@ -41,7 +41,7 @@
     "@types/node": "^9.3.0",
     "@types/supertest": "^2.0.4",
     "gulp": "^3.9.1",
-    "gulp-rsync": "0.0.8",
+    "gulp-rsync": "0.1.0",
     "jest": "^21.2.1",
     "nodemon": "^1.14.1",
     "prettier": "^1.11.1",
