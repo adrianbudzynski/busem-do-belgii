@@ -31,7 +31,7 @@
     "handlebars-helpers": "latest",
     "morgan": "latest",
     "nodemailer": "^4.6.7",
-    "reflect-metadata": "^0.1.12",
+    "reflect-metadata": "^0.2.0",
     "rxjs": "^6.0.0",
     "typescript": "^2.6.2"
   },
